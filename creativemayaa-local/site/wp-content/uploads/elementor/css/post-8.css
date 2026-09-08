@@ -1,0 +1,65 @@
+.elementor-kit-8{--e-global-color-primary:#253144;--e-global-color-secondary:#C3D3DF;--e-global-color-text:#F8F4ED;--e-global-color-accent:#B1A493;--e-global-color-fea1bb0:#FFFFFF;--e-global-color-dd10148:#3E2922;--e-global-color-77e2a77:#000000;--e-global-color-b06a7e5:#231F20;--e-global-color-b27450e:#1B1D1F;--e-global-typography-primary-font-family:"Romie Regular";--e-global-typography-primary-font-size:24px;--e-global-typography-primary-font-weight:normal;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"romie";--e-global-typography-text-font-size:18px;--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;--e-global-typography-fc91904-font-family:"Instrument Sans";--e-global-typography-fc91904-font-weight:400;--e-global-typography-eff5773-font-family:"ROMIE";--e-global-typography-eff5773-font-size:27px;--e-global-typography-eff5773-font-weight:600;--e-global-typography-ead8d40-font-family:"Editor's Note";--e-global-typography-ead8d40-font-size:18px;--e-global-typography-ead8d40-font-weight:normal;--e-global-typography-934c7f5-font-family:"Editor's Note";--e-global-typography-934c7f5-font-weight:400;--e-global-typography-fb4c192-font-family:"Source Serif Pro";--e-global-typography-fb4c192-font-size:24px;--e-global-typography-fb4c192-font-weight:400;color:var( --e-global-color-dd10148 );font-family:var( --e-global-typography-ead8d40-font-family ), Sans-serif;font-size:var( --e-global-typography-ead8d40-font-size );font-weight:var( --e-global-typography-ead8d40-font-weight );--e-page-transition-entrance-animation:e-page-transition-fade-out;--e-page-transition-animation-duration:1300ms;--e-preloader-animation-duration:1500ms;--e-preloader-delay:0ms;--e-preloader-color:#FFF;--e-preloader-size:20px;}.elementor-kit-8 e-page-transition{background-color:#3E2922;}.elementor-kit-8 p{margin-block-end:0px;}.elementor-kit-8 h1{font-family:"Romie Regular", Sans-serif;font-size:24px;font-weight:400;font-style:normal;}.elementor-kit-8 h2{font-family:"Romie Regular", Sans-serif;font-size:24px;font-weight:400;}.elementor-kit-8 h3{font-family:"Romie Regular", Sans-serif;font-weight:400;}.elementor-kit-8 h4{font-family:"Romie Regular", Sans-serif;}.elementor-kit-8 h5{font-family:"Editor's Note", Sans-serif;font-weight:normal;}.elementor-kit-8 h6{font-family:"Romie Regular", Sans-serif;font-weight:normal;}.elementor-kit-8 button,.elementor-kit-8 input[type="button"],.elementor-kit-8 input[type="submit"],.elementor-kit-8 .elementor-button{font-family:"Inter", Sans-serif;font-size:13px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-kit-8{font-size:var( --e-global-typography-ead8d40-font-size );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-8{font-size:var( --e-global-typography-ead8d40-font-size );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Romie Regular';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('../../2025/03/romie-regular-webfont.eot');
+	src: url('../../2025/03/romie-regular-webfont.eot') format('embedded-opentype'),
+		url('../../2025/03/romie-regular-webfont.woff2') format('woff2'),
+		url('../../2025/03/romie-regular-webfont.woff') format('woff'),
+		url('../../2025/03/romie-regular-1.ttf') format('truetype'),
+		url('../../2025/03/romie-regular-webfont.svg') format('svg');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'ROMIE';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('../../2025/02/romie-regular.woff') format('woff'),
+		url('../../2025/02/romie-regular-1.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'ROMIE';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('../../2025/03/romie-regular.eot');
+	src: url('../../2025/03/romie-regular.eot') format('embedded-opentype'),
+		url('../../2025/03/romie-regular.woff2') format('woff2'),
+		url('../../2025/02/romie-regular.woff') format('woff'),
+		url('../../2025/03/romie-regular.ttf') format('truetype');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Editor&#8217;s Note';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('../../2026/03/EditorsNote-Regular-iF664322be6e849.eot');
+	src: url('../../2026/03/EditorsNote-Regular-iF664322be6e849.eot') format('embedded-opentype'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.woff2') format('woff2'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.woff') format('woff'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.ttf') format('truetype'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.svg') format('svg');
+}
+@font-face {
+	font-family: 'Editor&#8217;s Note';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('../../2026/03/EditorsNote-Regular-iF664322be6e849-1.eot');
+	src: url('../../2026/03/EditorsNote-Regular-iF664322be6e849-1.eot') format('embedded-opentype'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.woff2') format('woff2'),
+		url('../../2025/08/EditorsNote-Regular-iF664322be6e849-1.woff') format('woff'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.ttf') format('truetype'),
+		url('../../2026/03/EditorsNote-Regular-iF664322be6e849.svg') format('svg');
+}
+@font-face {
+	font-family: 'Editor&#8217;s Note';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: ;
+}
+/* End Custom Fonts CSS */

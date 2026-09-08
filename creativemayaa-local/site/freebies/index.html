@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freebies - Creative Mayaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../wp-content/themes/hello-elementor/style.min.css">
+  <link rel="stylesheet" href="../wp-content/themes/hello-elementor/theme.min.css">
+  <link rel="stylesheet" href="../wp-content/uploads/elementor/google-fonts/css/robotoslab.css">
+  <link rel="stylesheet" href="../wp-content/uploads/elementor/google-fonts/css/instrumentsans.css">
+  <style>
+    :root {
+      --cm-bg: #f4efe7;
+      --cm-card: rgba(255, 255, 255, 0.72);
+      --cm-text: #3d3127;
+      --cm-muted: #6b5d50;
+      --cm-line: rgba(61, 49, 39, 0.12);
+      --cm-accent: #a77c56;
+      --cm-accent-strong: #7f5736;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cm-text);
+      background:
+        radial-gradient(circle at top left, rgba(167, 124, 86, 0.16), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(122, 93, 70, 0.18), transparent 24%),
+        linear-gradient(180deg, #f8f4ee 0%, var(--cm-bg) 100%);
+      font-family: "Instrument Sans", Arial, sans-serif;
+    }
+
+    main {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--cm-muted);
+    }
+
+    .hero {
+      padding: 34px;
+      border: 1px solid var(--cm-line);
+      border-radius: 28px;
+      background: var(--cm-card);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 55px rgba(48, 34, 23, 0.08);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Roboto Slab", Georgia, serif;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+    }
+
+    .lede {
+      max-width: 640px;
+      margin: 18px 0 0;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--cm-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--cm-line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-family: "Roboto Slab", Georgia, serif;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--cm-muted);
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: var(--cm-accent-strong);
+      color: #fff;
+    }
+
+    .button.secondary {
+      border: 1px solid var(--cm-line);
+      color: var(--cm-text);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--cm-muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Creative Mayaa</p>
+    <section class="hero">
+      <h1>Freebies</h1>
+      <p class="lede">The live source site links to a freebies page that is currently unavailable. This local page keeps the mirrored site navigable and gives you quick paths into the sections that are already working.</p>
+      <div class="grid">
+        <article class="card">
+          <h2>Browse Brand Kits</h2>
+          <p>Jump straight into the ready-made brand kit collection.</p>
+        </article>
+        <article class="card">
+          <h2>See The Portfolio</h2>
+          <p>Review the studio work and the individual case-study pages.</p>
+        </article>
+        <article class="card">
+          <h2>Start A Project</h2>
+          <p>Open the contact page if you want the most action-oriented next step.</p>
+        </article>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="../brand-kits/">Shop Brand Kits</a>
+        <a class="button secondary" href="../portfolio/">View Portfolio</a>
+        <a class="button secondary" href="../contact/">Contact</a>
+      </div>
+      <p class="note">This route is a local repair for the mirror. On the live site, `https://creativemayaa.com/freebies/` currently returns `404`.</p>
+    </section>
+  </main>
+</body>
+</html>
