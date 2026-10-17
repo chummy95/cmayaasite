@@ -53,9 +53,42 @@
   var modals = {};
   var lastTrigger = null;
 
-  function buildModal(id) {
+  // Elementor removes popup templates from the page once it starts up, so keep a
+  // copy of each one as early as possible.
+  var stash = {};
+  function stashPopups(root) {
+    var found = (root || document).querySelectorAll('[data-elementor-type="popup"][data-elementor-id]');
+    for (var i = 0; i < found.length; i++) {
+      var pid = found[i].getAttribute('data-elementor-id');
+      if (!stash[pid]) stash[pid] = found[i].cloneNode(true);
+    }
+  }
+  stashPopups();
+  document.addEventListener('DOMContentLoaded', function () { stashPopups(); });
+
+  // Last resort: re-read this page's HTML and take the popup markup from there.
+  var pageCopy = null;
+  function fetchPopup(id) {
+    if (!pageCopy) {
+      pageCopy = fetch(window.location.href, { credentials: 'same-origin' })
+        .then(function (r) { return r.text(); })
+        .then(function (html) { return new DOMParser().parseFromString(html, 'text/html'); });
+    }
+    return pageCopy.then(function (doc) {
+      stashPopups(doc);
+      return stash[id] ? document.importNode(stash[id], true) : null;
+    });
+  }
+
+  function findPopup(id) {
+    var live = document.querySelector('[data-elementor-type="popup"][data-elementor-id="' + id + '"]');
+    if (live) return live;
+    return stash[id] ? stash[id].cloneNode(true) : null;
+  }
+
+  function buildModal(id, source) {
     if (modals[id]) return modals[id];
-    var source = document.querySelector('[data-elementor-type="popup"][data-elementor-id="' + id + '"]');
+    source = source || findPopup(id);
     if (!source) return null;
 
     var settings = {};
@@ -106,7 +139,12 @@
 
   function openModal(id, trigger) {
     var m = buildModal(id);
-    if (!m) return;
+    if (!m) {
+      fetchPopup(id).then(function (source) {
+        if (source && buildModal(id, source)) openModal(id, trigger);
+      });
+      return;
+    }
     lastTrigger = trigger || null;
     m.el.classList.add('cm-open');
     if (m.settings.prevent_scroll === 'yes') document.documentElement.classList.add('cm-no-scroll');
