@@ -187,6 +187,13 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-about .cma-ph small{font-size:10px;letter-spacing:.1em}
 
 .cm-about .cma-diptych{display:grid;grid-template-columns:1fr 1fr;gap:24px}.cm-about .cma-diptych .cma-photo{aspect-ratio:3/4;height:auto}.cm-about img.cma-photo{height:auto}.cm-about .cma-photo--portrait{object-position:center top}.cm-about .cma-story__close{margin-top:28px;max-width:540px}@media(max-width:767px){.cm-about .cma-diptych{gap:10px}}
+.cm-about .cma-statements{background:var(--cma-white);padding:120px 0 130px}
+.cm-about .cma-statement{font-family:"Romie Regular",serif;font-size:clamp(28px,3.6vw,46px);line-height:1.25;color:var(--cma-brown);max-width:900px;margin:0 auto 34px}
+.cm-about .cma-statement em{font-family:"Newsreader",serif;font-style:italic;font-weight:300}
+.cm-about .cma-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:80px;align-items:start}
+.cm-about .cma-trio .cma-photo{aspect-ratio:3/4;height:auto;object-fit:cover}
+.cm-about .cma-trio .cma-photo:nth-child(2){margin-top:70px}
+@media(max-width:767px){.cm-about .cma-statements{padding:80px 0}.cm-about .cma-trio{grid-template-columns:1fr 1fr;gap:10px;margin-top:50px}.cm-about .cma-trio .cma-photo:nth-child(2){margin-top:40px}.cm-about .cma-trio .cma-photo:nth-child(3){grid-column:1/-1;aspect-ratio:4/3;object-position:center 58%}}
 /* 1. hero */
 .cm-about .cma-hero{background:var(--cma-cream);padding:110px 0 120px}
 .cm-about .cma-hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
@@ -195,8 +202,8 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-about .cma-emblem{position:absolute;left:-60px;bottom:-50px;width:130px;height:130px;border-radius:50%;background:var(--cma-cream);box-shadow:0 0 0 10px var(--cma-cream)}
 
 /* 2. story */
-.cm-about .cma-story{background:var(--cma-white);padding:130px 0 120px}
-.cm-about .cma-story__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;margin-bottom:80px}
+.cm-about .cma-story{background:var(--cma-cream);padding:120px 0}
+.cm-about .cma-story__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
 .cm-about .cma-story__head .cma-h2{max-width:420px}
 
 /* 3. what we do */
@@ -254,7 +261,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
   .cm-about .cma-hero__media{justify-self:center;max-width:340px}
   .cm-about .cma-emblem{width:96px;height:96px;left:-14px;bottom:-36px;box-shadow:0 0 0 7px var(--cma-cream)}
   .cm-about .cma-story,.cm-about .cma-do,.cm-about .cma-fit,.cm-about .cma-words,.cm-about .cma-cta{padding:80px 0}
-  .cm-about .cma-story__grid{gap:8px;margin-bottom:50px}
+  .cm-about .cma-story__grid{gap:8px}
   .cm-about .cma-photo--wide{aspect-ratio:4/3}
   .cm-about .cma-do__head{margin-bottom:40px}
   .cm-about .cma-do__item,.cm-about .cma-do__item:first-child,.cm-about .cma-do__item:last-child{border-left:0;border-bottom:1px solid rgba(248,244,237,.2);padding:30px 0 16px}
@@ -349,6 +356,19 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 					</div>
 				</section>
 
+				<!-- ============ STATEMENTS + PHOTOS ============ -->
+				<section class="cma-statements">
+					<div class="cma-wrap cma-center">
+						<p class="cma-statement cma-reveal">We believe a brand should feel as <em>considered</em> as the business behind it.</p>
+						<p class="cma-statement cma-reveal">Designed with <em>intention</em>, and built to grow with you.</p>
+					</div>
+					<div class="cma-wrap cma-trio">
+						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-at-desk-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa working at her desk in the studio">
+						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-studio-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-studio-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-studio-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-studio-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa in the Creative Mayaa studio">
+						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-1300.webp 1300w" sizes="(max-width: 767px) 100vw, 360px" alt="Close-up of Mayaa working on her laptop">
+					</div>
+				</section>
+
 				<!-- ============ 2. HOW IT STARTED ============ -->
 				<section class="cma-story" id="cma-story">
 					<div class="cma-wrap cma-story__grid">
@@ -361,12 +381,6 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 							<p class="cma-body">Since then, I&rsquo;ve wholeheartedly enjoyed helping business owners bring their ideas to life through strategic branding and web design. I&rsquo;ve had the privilege of working with incredible clients across multiple continents, learning more than I ever imagined and building a business that fulfils me deeply.</p>
 							<p class="cma-italic cma-story__close">I have enormous faith in what I&rsquo;m building &mdash; and the plan is to take you all along with me. One project, post or email at a time.</p>
 						</div>
-					</div>
-					<div class="cma-wrap cma-reveal">
-						<div class="cma-diptych">
-<img class="cma-photo" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-at-desk-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 560px" alt="Mayaa working at her desk in the studio">
-<img class="cma-photo" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 560px" alt="Close-up of Mayaa working on her laptop">
-</div>
 					</div>
 				</section>
 
@@ -405,7 +419,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 				<section class="cma-fit">
 					<div class="cma-wrap cma-fit__grid">
 						<div class="cma-fit__media cma-reveal">
-							<img class="cma-photo cma-photo--portrait" loading="lazy" decoding="async" width="900" height="1125" src="../wp-content/uploads/2026/11/about/mayaa-studio-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-studio-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-studio-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-studio-1300.webp 1300w" sizes="(max-width: 767px) 340px, 420px" alt="Mayaa in the Creative Mayaa studio">
+							<img class="cma-photo cma-photo--portrait" loading="lazy" decoding="async" width="819" height="1024" src="../wp-content/uploads/2026/03/Artboard-38-819x1024.png" srcset="../wp-content/uploads/2026/03/Artboard-38-600x750.png 600w, ../wp-content/uploads/2026/03/Artboard-38-819x1024.png 819w" sizes="(max-width: 767px) 340px, 420px" alt="Branded packaging designed by Creative Mayaa Studio">
 						</div>
 						<div class="cma-fit__text cma-reveal">
 							<p class="cma-eyebrow">Who we work with</p>
