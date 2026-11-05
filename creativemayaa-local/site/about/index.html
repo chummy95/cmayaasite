@@ -251,6 +251,25 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-about .cma-reveal.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.cm-about .cma-reveal{opacity:1;transform:none;transition:none}}
 
+
+/* ---- scroll effects ---- */
+.cm-about .cma-hero{overflow:visible}
+.cm-about .cma-hero__media{position:absolute;inset:0;overflow:hidden;z-index:-2}
+.cm-about .cma-hero__bg{position:absolute;inset:auto;left:0;right:0;top:-14%;height:114%;width:100%;will-change:translate}
+.cm-about .cma-hero__bg img{position:absolute;inset:0;width:100%;height:100%}
+.cm-about .cma-hero__content{will-change:opacity,translate}
+.cm-about .cma-emblem{will-change:rotate}
+.cm-about .cma-imgreveal{clip-path:inset(18% 0 0 0);opacity:0;scale:1.06;transition:clip-path 1.3s cubic-bezier(.22,.61,.36,1),opacity 1s ease,scale 1.6s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0ms)}
+.cm-about .cma-imgreveal.is-in{clip-path:inset(0 0 0 0);opacity:1;scale:1}
+.cm-about .cma-clip{overflow:hidden}
+.cm-about .cma-clip.cma-imgreveal{scale:1}
+.cm-about .cma-drift{scale:1.12;will-change:translate}
+.cm-about [data-parallax]{will-change:translate}
+.cm-about .cma-reveal{transition-delay:var(--d,0ms)}
+@media (prefers-reduced-motion:reduce){
+  .cm-about .cma-imgreveal{clip-path:none;opacity:1;scale:1;transition:none}
+  .cm-about .cma-drift{scale:1}
+}
 /* tablet */
 @media (max-width:1024px){
   .cm-about .cma-story__grid,.cm-about .cma-fit__grid{gap:50px}
@@ -345,10 +364,10 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 				<!-- ============ 1. HERO (full screen) ============ -->
 				<section class="cma-hero">
-					<picture class="cma-hero__bg">
+					<div class="cma-hero__media" aria-hidden="false"><picture class="cma-hero__bg">
 						<source media="(max-width: 767px)" srcset="../wp-content/uploads/2026/11/about/hero-typing-tall-600.webp 600w, ../wp-content/uploads/2026/11/about/hero-typing-tall-900.webp 900w" sizes="100vw">
 						<img src="../wp-content/uploads/2026/11/about/hero-typing-wide-1449.webp" srcset="../wp-content/uploads/2026/11/about/hero-typing-wide-1000.webp 1000w, ../wp-content/uploads/2026/11/about/hero-typing-wide-1449.webp 1449w" sizes="100vw" width="1449" height="905" alt="Mayaa typing on her laptop" fetchpriority="high" decoding="async">
-					</picture>
+					</picture></div>
 					<div class="cma-wrap cma-hero__content">
 						<p class="cma-eyebrow cma-reveal">About the studio</p>
 						<h1 class="cma-h1 cma-reveal">Hi, I&rsquo;m Mayaa.</h1>
@@ -361,14 +380,14 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 				<!-- ============ STATEMENTS + PHOTOS ============ -->
 				<section class="cma-statements">
-					<div class="cma-wrap cma-center">
+					<div class="cma-wrap cma-center" data-stagger>
 						<p class="cma-statement cma-reveal">We believe a brand should feel as <em>considered</em> as the business behind it.</p>
 						<p class="cma-statement cma-reveal">Designed with <em>intention</em>, and built to grow with you.</p>
 					</div>
-					<div class="cma-wrap cma-trio">
-						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-at-desk-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa working at her desk in the studio">
-						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa typing on her laptop">
-						<img class="cma-photo cma-reveal" loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-studio-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-studio-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-studio-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-studio-1300.webp 1300w" sizes="(max-width: 767px) 100vw, 360px" alt="Mayaa in the Creative Mayaa studio">
+					<div class="cma-wrap cma-trio" data-stagger>
+						<img class="cma-photo cma-imgreveal" data-parallax loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-at-desk-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-at-desk-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa working at her desk in the studio">
+						<img class="cma-photo cma-imgreveal" data-parallax loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-laptop-detail-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-laptop-detail-1300.webp 1300w" sizes="(max-width: 767px) 50vw, 360px" alt="Mayaa typing on her laptop">
+						<img class="cma-photo cma-imgreveal" data-parallax loading="lazy" decoding="async" width="900" height="1200" src="../wp-content/uploads/2026/11/about/mayaa-studio-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-studio-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-studio-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-studio-1300.webp 1300w" sizes="(max-width: 767px) 100vw, 360px" alt="Mayaa in the Creative Mayaa studio">
 					</div>
 				</section>
 
@@ -395,7 +414,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 							<h2 class="cma-h2">Strategy first. Then everything else.</h2>
 							<p class="cma-body">We&rsquo;re a strategy-led studio. Every project begins with clarity on your audience, positioning and goals, so every visual decision has a reason behind it.</p>
 						</div>
-						<div class="cma-do__grid">
+						<div class="cma-do__grid" data-stagger>
 							<div class="cma-do__item cma-reveal">
 								<span class="cma-num">01</span>
 								<h3 class="cma-h3">Brand Identity</h3>
@@ -421,8 +440,8 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 				<!-- ============ 4. ARE WE A GOOD FIT? ============ -->
 				<section class="cma-fit">
 					<div class="cma-wrap cma-fit__grid">
-						<div class="cma-fit__media cma-reveal">
-							<img class="cma-photo cma-photo--portrait" loading="lazy" decoding="async" width="900" height="1125" src="../wp-content/uploads/2026/11/about/mayaa-portrait-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-portrait-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-portrait-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-portrait-1300.webp 1300w" sizes="(max-width: 767px) 340px, 420px" alt="Mayaa, founder and creative director of Creative Mayaa Studio">
+						<div class="cma-fit__media cma-imgreveal cma-clip">
+							<img class="cma-photo cma-photo--portrait cma-drift" loading="lazy" decoding="async" width="900" height="1125" src="../wp-content/uploads/2026/11/about/mayaa-portrait-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-portrait-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-portrait-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-portrait-1300.webp 1300w" sizes="(max-width: 767px) 340px, 420px" alt="Mayaa, founder and creative director of Creative Mayaa Studio">
 						</div>
 						<div class="cma-fit__text cma-reveal">
 							<p class="cma-eyebrow">Who we work with</p>
@@ -447,7 +466,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 							<p class="cma-eyebrow">Kind words</p>
 							<h2 class="cma-h2">From the founders we&rsquo;ve worked with</h2>
 						</div>
-						<div class="cma-words__grid">
+						<div class="cma-words__grid" data-stagger>
 							<figure class="cma-quote cma-reveal">
 								<svg class="cma-quote__icon" aria-hidden="true" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path></svg>
 								<blockquote>
@@ -801,12 +820,35 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 
 <script src="/cm-fixes.js" defer></script>
-<script id="cm-about-js">(function(){var els=[].slice.call(document.querySelectorAll('.cm-about .cma-reveal'));
+<script id="cm-about-js">(function(){
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* stagger delays */
+[].forEach.call(document.querySelectorAll('.cm-about [data-stagger]'),function(g){var i=0;[].forEach.call(g.children,function(c){if(c.classList.contains('cma-reveal')||c.classList.contains('cma-imgreveal')){c.style.setProperty('--d',(i++*140)+'ms');}});});
+/* reveal on scroll (with a safety net) */
+var els=[].slice.call(document.querySelectorAll('.cm-about .cma-reveal, .cm-about .cma-imgreveal'));
 function show(e){e.classList.add('is-in');}
-function check(){var h=window.innerHeight||document.documentElement.clientHeight;els=els.filter(function(e){if(e.getBoundingClientRect().top<h*0.95){show(e);return false;}return true;});if(!els.length){window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll);}}
-var ticking=false;function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;check();});}}
-window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);window.addEventListener('load',check);check();
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e);});}
+if(reduce){els.forEach(show);els=[];}
+function check(){var h=window.innerHeight;els=els.filter(function(e){if(e.getBoundingClientRect().top<h*0.92){show(e);return false;}return true;});}
+if('IntersectionObserver' in window&&els.length){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e);});}
+/* parallax */
+var hero=document.querySelector('.cm-about .cma-hero'),bg=document.querySelector('.cm-about .cma-hero__bg'),content=document.querySelector('.cm-about .cma-hero__content'),emblem=document.querySelector('.cm-about .cma-emblem');
+var par=[].slice.call(document.querySelectorAll('.cm-about [data-parallax]')),drift=[].slice.call(document.querySelectorAll('.cm-about .cma-drift'));
+function frame(){
+  check();
+  if(reduce)return;
+  var h=window.innerHeight,small=window.innerWidth<768,y=window.pageYOffset;
+  if(hero){var hh=hero.offsetHeight,top=hero.getBoundingClientRect().top;
+    if(top>-hh&&top<h){var sc=Math.max(0,-top);
+      bg.style.translate='0 '+Math.min(sc*0.35,hh*0.14).toFixed(1)+'px';
+      content.style.translate='0 '+(sc*0.18).toFixed(1)+'px';
+      content.style.opacity=Math.max(0,1-sc/(hh*1.05)).toFixed(3);}}
+  if(emblem){emblem.style.rotate=(y*0.06).toFixed(2)+'deg';}
+  var k=small?0.035:0.07;
+  par.forEach(function(e,i){var r=e.getBoundingClientRect();if(r.bottom<0||r.top>h)return;var off=(r.top+r.height/2-h/2);var dir=(i%3===1)?1:-1;e.style.translate='0 '+(off*k*dir).toFixed(1)+'px';});
+  drift.forEach(function(e){var r=e.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>h)return;var off=(r.top+r.height/2-h/2);e.style.translate='0 '+(off*-0.06).toFixed(1)+'px';});
+}
+var ticking=false;function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;frame();});}}
+window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);window.addEventListener('load',frame);frame();
 })();</script>
 </body>
 </html>
