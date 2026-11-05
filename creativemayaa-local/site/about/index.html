@@ -257,6 +257,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
   .cm-about .cma-do__item{padding:36px 24px 10px}
   .cm-about .cma-quote{padding:44px 34px 38px}
 }
+@media (max-width:900px){.cm-about .cma-words__grid{grid-template-columns:1fr}}
 /* phone */
 @media (max-width:767px){
   .cm-about .cma-wrap{padding:0 20px}
@@ -662,19 +663,21 @@ var sbiajaxurl = "https://creativemayaa.com/wp-admin/admin-ajax.php";
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default"><a href="../index.html">HOME</a></h2>				</div>
 				</div>
+				<div class="elementor-element elementor-element-15afd0c cm-nav-about elementor-widget elementor-widget-heading" data-id="15afd0c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default"><a href="index.html">ABOUT</a></h2>				</div>
+				</div>
 				<div class="elementor-element elementor-element-42872514 elementor-widget elementor-widget-heading" data-id="42872514" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default"><a href="../services/index.html">SERVICES</a></h2>				</div>
 				</div>
+				
+				</div>
+		<div class="elementor-element elementor-element-52c779cb e-con-full e-flex e-con e-child" data-id="52c779cb" data-element_type="container" data-e-type="container">
+				
 				<div class="elementor-element elementor-element-2ae9f267 elementor-widget elementor-widget-heading" data-id="2ae9f267" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default"><a href="../contact/index.html">CONTACT</a></h2>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-52c779cb e-con-full e-flex e-con e-child" data-id="52c779cb" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-15afd0c cm-nav-about elementor-widget elementor-widget-heading" data-id="15afd0c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="index.html">ABOUT</a></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-491dd971 elementor-widget elementor-widget-heading" data-id="491dd971" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -798,6 +801,12 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 
 <script src="/cm-fixes.js" defer></script>
-<script id="cm-about-js">(function(){var els=document.querySelectorAll('.cm-about .cma-reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)});})();</script>
+<script id="cm-about-js">(function(){var els=[].slice.call(document.querySelectorAll('.cm-about .cma-reveal'));
+function show(e){e.classList.add('is-in');}
+function check(){var h=window.innerHeight||document.documentElement.clientHeight;els=els.filter(function(e){if(e.getBoundingClientRect().top<h*0.95){show(e);return false;}return true;});if(!els.length){window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll);}}
+var ticking=false;function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;check();});}}
+window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);window.addEventListener('load',check);check();
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e);});}
+})();</script>
 </body>
 </html>
