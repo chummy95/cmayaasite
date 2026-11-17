@@ -254,6 +254,33 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 @keyframes cms-nudge{0%,100%{translate:0 0}50%{translate:5px 0}}
 @media (prefers-reduced-motion:reduce){.cm-svc .cms-slider__track{transition:none}.cm-svc .cms-slider__tab--next .cms-slider__arrow{animation:none}.cm-svc .cms-row:hover .cms-row__media img{scale:1}}
 
+/* 4. compare table */
+.cm-svc .cms-compare{background:var(--cms-cream);padding:120px 0;overflow:hidden}
+.cm-svc .cms-compare .cms-wrap{min-width:0}
+.cm-svc .cms-compare__scroll{max-width:100%}
+.cm-svc .cms-compare__hint{display:none;font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px;opacity:.7;text-align:right}
+.cm-svc .cms-compare__scroll{margin-top:50px;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--cms-white);border:1px solid var(--cms-line)}
+.cm-svc .cms-compare__scroll:focus-visible{outline:1px solid var(--cms-brown);outline-offset:3px}
+.cm-svc .cms-table{width:100%;min-width:900px;border-collapse:collapse;table-layout:fixed;margin:0;font-size:14px;line-height:1.55;color:var(--cms-brown);background:transparent}
+.cm-svc .cms-table th,.cm-svc .cms-table td{border:0;border-bottom:1px solid var(--cms-line);border-left:1px solid var(--cms-line);padding:18px 20px;vertical-align:top;background:transparent}
+.cm-svc .cms-table tr>*:first-child{border-left:0}
+.cm-svc .cms-table tbody tr:last-child>*{border-bottom:0}
+.cm-svc .cms-table td{text-align:center;position:relative}
+.cm-svc .cms-table .cms-table__corner{width:22%;background:var(--cms-white)}
+.cm-svc .cms-table thead th{font-family:"Romie Regular",serif;font-weight:400;font-size:22px;line-height:1.2;text-align:center;vertical-align:middle;padding:30px 16px;border-bottom:0;border-left:0}
+.cm-svc .cms-table .cms-table__h--1{background:#C9B9A6;color:var(--cms-white)}
+.cm-svc .cms-table .cms-table__h--2{background:#9C8C7B;color:var(--cms-white)}
+.cm-svc .cms-table .cms-table__h--3{background:var(--cms-brown);color:var(--cms-cream)}
+.cm-svc .cms-table .cms-table__h--4{background:var(--cms-sand);color:var(--cms-brown)}
+.cm-svc .cms-table tbody th{text-align:left;font-family:"Inter",sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--cms-white)}
+.cm-svc .cms-table__price td{font-family:"Romie Regular",serif;font-size:24px;line-height:1.1}
+.cm-svc .cms-yes::before{content:"\2713";margin-right:6px}
+.cm-svc .cms-no{opacity:.55}
+.cm-svc .cms-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cm-svc .cms-compare__cta{margin-top:80px}
+.cm-svc .cms-compare__cta .cms-h4{font-size:32px;margin:0 0 18px}
+.cm-svc .cms-compare__cta .cms-btn{margin-top:8px}
+
 /* 5. unsure */
 .cm-svc .cms-unsure{background:var(--cms-cream);padding:110px 0}
 .cm-svc .cms-unsure .cms-btn{margin-top:8px}
@@ -303,6 +330,9 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 /* tablet */
 @media (max-width:1024px){
+  .cm-svc .cms-compare__hint{display:block}
+  .cm-svc .cms-compare__scroll{margin-top:0}
+  .cm-svc .cms-table tbody th,.cm-svc .cms-table .cms-table__corner{position:sticky;left:0;z-index:1;box-shadow:1px 0 0 var(--cms-line)}
   .cm-svc .cms-row{grid-template-columns:1fr;min-height:0}
   .cm-svc .cms-row__media{aspect-ratio:4/3}
   .cm-svc .cms-row--flip .cms-row__media{order:0}
@@ -325,7 +355,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
   .cm-svc .cms-hero__grid,.cm-svc .cms-faq__grid{grid-template-columns:1fr}
   .cm-svc .cms-hero__grid{gap:50px}
   .cm-svc .cms-hero__media{justify-self:center;max-width:360px}
-  .cm-svc .cms-approach,.cm-svc .cms-process,.cm-svc .cms-words,.cm-svc .cms-faq,.cm-svc .cms-cta,.cm-svc .cms-unsure{padding:80px 0}
+  .cm-svc .cms-approach,.cm-svc .cms-process,.cm-svc .cms-words,.cm-svc .cms-faq,.cm-svc .cms-cta,.cm-svc .cms-unsure,.cm-svc .cms-compare{padding:80px 0}
   .cm-svc .cms-packages{padding:80px 0 0}
   .cm-svc .cms-rows{margin-top:44px}
   .cm-svc .cms-row__body,.cm-svc .cms-slider__track>.cms-row:first-child .cms-row__body,.cm-svc .cms-slider__track>.cms-row:last-child .cms-row__body{padding:48px 20px 60px}
@@ -341,6 +371,15 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
   .cm-svc .cms-faq summary{font-size:15px;padding-right:36px}
   .cm-svc .cms-faq details p{padding-right:0}
   .cm-svc .cms-italic{font-size:18px}
+  .cm-svc .cms-compare .cms-wrap{padding:0 0 0 20px}
+  .cm-svc .cms-compare .cms-center,.cm-svc .cms-compare__hint{padding-right:20px}
+  .cm-svc .cms-compare__scroll{border-right:0}
+  .cm-svc .cms-table{min-width:780px;font-size:13px}
+  .cm-svc .cms-table th,.cm-svc .cms-table td{padding:14px 14px}
+  .cm-svc .cms-table thead th{font-size:19px;padding:22px 12px}
+  .cm-svc .cms-table .cms-table__corner{width:150px}
+  .cm-svc .cms-compare__cta{margin-top:56px}
+  .cm-svc .cms-compare__cta .cms-btn{width:100%}
 }
 </style>
 </head>
@@ -602,13 +641,49 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 					</div>
 				</section>
 
-				<!-- ============ 5. NOT SURE ============ -->
-				<section class="cms-unsure">
-					<div class="cms-wrap cms-center cms-reveal">
-						<h2 class="cms-h2">Not sure which is right for you?</h2>
-						<p class="cms-body">That&rsquo;s what the Walkthrough Call is for. Tell us where your business is today and where you&rsquo;d like it to go, and we&rsquo;ll recommend the right route.</p>
-						<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
-						<p class="cms-unsure__alt">Not ready for a full project? <a class="cms-link" href="../brand-kits/index.html">Explore our brand kits <span aria-hidden="true">&rarr;</span></a></p>
+				<!-- ============ 4. COMPARE ============ -->
+				<section class="cms-compare" aria-labelledby="cms-compare-title">
+					<div class="cms-wrap">
+						<div class="cms-center cms-reveal">
+							<p class="cms-eyebrow">Compare</p>
+							<h2 class="cms-h2" id="cms-compare-title">The packages, side by side</h2>
+						</div>
+						<p class="cms-compare__hint" aria-hidden="true">Swipe to compare &rarr;</p>
+						<div class="cms-compare__scroll cms-reveal" tabindex="0" role="region" aria-label="Package comparison table">
+							<table class="cms-table">
+								<thead>
+									<tr>
+										<td class="cms-table__corner"></td>
+										<th scope="col" class="cms-table__h cms-table__h--1">The Blueprint</th>
+										<th scope="col" class="cms-table__h cms-table__h--2">The Framework</th>
+										<th scope="col" class="cms-table__h cms-table__h--3">The Residence</th>
+										<th scope="col" class="cms-table__h cms-table__h--4">The Vessel</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr><th scope="row">Best for</th><td>A focused foundation to build from</td><td>A complete identity system</td><td>Brand + website, designed together</td><td>Product brands: identity + packaging</td></tr>
+									<tr class="cms-table__price"><th scope="row">Investment from</th><td>$3,500</td><td>$6,500</td><td>$10,500</td><td>$8,500</td></tr>
+									<tr><th scope="row">Typical timeline</th><td>2&ndash;3 weeks</td><td>4&ndash;6 weeks</td><td>8&ndash;10 weeks</td><td>6&ndash;8 weeks</td></tr>
+									<tr><th scope="row">Discovery</th><td>Questionnaire + 60-minute strategy session</td><td>Questionnaire + strategy workshop</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Research</th><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td>Audience + competitor research</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Positioning &amp; messaging</th><td>Positioning statement + brand voice notes</td><td>Positioning, messaging pillars + tagline direction</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Creative direction</th><td>Visual direction + moodboard</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Logo</th><td>Primary logo + submark</td><td>Full logo suite</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Colour &amp; typography</th><td>Core palette + two typefaces</td><td>Extended palette + full type hierarchy</td><td><span class="cms-yes">Included, applied to web</span></td><td><span class="cms-yes">Included, applied to packaging</span></td></tr>
+									<tr><th scope="row">Brand assets</th><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td>Patterns + graphic elements, social templates, business card + email signature</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Guidelines</th><td>Mini brand guide</td><td>Full brand guidelines</td><td><span class="cms-yes">Included</span></td><td><span class="cms-yes">Included</span></td></tr>
+									<tr><th scope="row">Website</th><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td>Website strategy + sitemap, custom desktop + mobile design, build, SEO setup + launch</td><td>Optional Shopify store add-on</td></tr>
+									<tr><th scope="row">Packaging</th><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td>Packaging strategy + shelf review, design for up to 3 products, print-ready files + printer liaison</td></tr>
+									<tr><th scope="row">After launch</th><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td><td>30 days of support + optional monthly care plan</td><td class="cms-no"><span aria-hidden="true">&mdash;</span><span class="cms-sr">Not included</span></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cms-compare__cta cms-center cms-reveal">
+							<h3 class="cms-h4">Not sure which is right for you?</h3>
+							<p class="cms-body">That&rsquo;s what the Walkthrough Call is for. Tell us where your business is today and where you&rsquo;d like it to go, and we&rsquo;ll recommend the right route.</p>
+							<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
+							<p class="cms-unsure__alt">Not ready for a full project? <a class="cms-link" href="../brand-kits/index.html">Explore our brand kits <span aria-hidden="true">&rarr;</span></a></p>
+						</div>
 					</div>
 				</section>
 
