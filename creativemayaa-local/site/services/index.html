@@ -185,7 +185,10 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-svc .cms-hero{background:var(--cms-cream);padding:110px 0 120px}
 .cm-svc .cms-hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
 .cm-svc .cms-hero__media{max-width:440px;width:100%;justify-self:end;overflow:hidden}
-.cm-svc .cms-hero__media .cms-photo{aspect-ratio:4/5;scale:1.06}
+.cm-svc .cms-slides{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--cms-sand)}
+.cm-svc .cms-slides__track{position:absolute;inset:0;scale:1.06}
+.cm-svc .cms-slide{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+.cm-svc .cms-slide.is-on{opacity:1}
 
 /* 2. approach */
 .cm-svc .cms-approach{background:var(--cms-white);padding:120px 0}
@@ -396,7 +399,20 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 							</div>
 						</div>
 						<div class="cms-hero__media cms-reveal">
-							<img class="cms-photo" data-drift src="../wp-content/uploads/2026/11/about/mayaa-studio-900.webp" srcset="../wp-content/uploads/2026/11/about/mayaa-studio-600.webp 600w, ../wp-content/uploads/2026/11/about/mayaa-studio-900.webp 900w, ../wp-content/uploads/2026/11/about/mayaa-studio-1300.webp 1300w" sizes="(max-width: 767px) 90vw, 440px" width="900" height="1125" alt="Mayaa in the Creative Mayaa studio" fetchpriority="high" decoding="async">
+							<div class="cms-slides" role="img" aria-label="A selection of brand identity, website and packaging projects by Creative Mayaa Studio">
+								<div class="cms-slides__track" data-drift>
+								<img class="cms-slide is-on" src="../wp-content/uploads/2026/11/services/slides/work-01-900.webp" width="900" height="1125" alt="" fetchpriority="high" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-02-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-03-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-04-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-05-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-06-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-07-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-08-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-09-900.webp" width="900" height="1125" alt="" decoding="async">
+								<img class="cms-slide" data-src="../wp-content/uploads/2026/11/services/slides/work-10-900.webp" width="900" height="1125" alt="" decoding="async">
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -983,6 +999,13 @@ if('IntersectionObserver' in window&&els.length){var io=new IntersectionObserver
 var drift=[].slice.call(document.querySelectorAll('.cm-svc [data-drift]'));
 function frame(){check();if(reduce)return;var h=window.innerHeight,k=window.innerWidth<768?0.03:0.06;
   drift.forEach(function(e){var r=e.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>h)return;var off=r.top+r.height/2-h/2;e.style.translate='0 '+(off*-k).toFixed(1)+'px';});}
+/* hero slideshow — same pace as the homepage carousel */
+var ss=document.querySelector('.cm-svc .cms-slides');
+if(ss){var sl=[].slice.call(ss.querySelectorAll('.cms-slide')),cur=0,hold=false;
+  ss.addEventListener('mouseenter',function(){hold=true;});ss.addEventListener('mouseleave',function(){hold=false;});
+  window.addEventListener('load',function(){sl.forEach(function(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src');}});
+    if(reduce)return;setInterval(function(){if(hold||document.hidden)return;var n=(cur+1)%sl.length,tries=0;while(!(sl[n].complete&&sl[n].naturalWidth)&&tries<sl.length){n=(n+1)%sl.length;tries++;}
+      if(n===cur)return;sl[cur].classList.remove('is-on');sl[n].classList.add('is-on');cur=n;},550);});}
 var t=false;function on(){if(!t){t=true;requestAnimationFrame(function(){t=false;frame();});}}
 window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on);window.addEventListener('load',frame);frame();
 })();</script>
