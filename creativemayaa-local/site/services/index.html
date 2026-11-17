@@ -160,7 +160,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 /* type */
 .cm-svc .cms-eyebrow{font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:0 0 22px;color:var(--cms-brown)}
 .cm-svc .cms-h1,.cm-svc .cms-h2,.cm-svc .cms-h4,.cm-svc .cms-pkg__name{font-family:"Romie Regular",serif;font-weight:400;color:var(--cms-brown);margin:0;letter-spacing:-.005em}
-.cm-svc .cms-h1{font-size:clamp(40px,5vw,64px);line-height:1.06;margin-bottom:18px}
+.cm-svc .cms-h1{font-size:48px;line-height:1.1;margin-bottom:18px}
 .cm-svc .cms-h2{font-size:32px;line-height:1.2;margin-bottom:22px}
 .cm-svc .cms-h4{font-size:24px;line-height:1.2;margin:12px 0 12px}
 .cm-svc .cms-italic{font-family:"Newsreader",serif;font-style:italic;font-size:20px;line-height:1.5;margin:0 0 24px}
@@ -198,43 +198,61 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-svc .cms-pillar:first-child{border-left:0;padding-left:0}
 .cm-svc .cms-pillar:last-child{padding-right:0}
 
-/* 3. packages */
-.cm-svc .cms-packages{background:var(--cms-cream);padding:120px 0 90px;scroll-margin-top:80px}
-.cm-svc .cms-pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:stretch}
-.cm-svc .cms-pkg{position:relative;display:flex;flex-direction:column;background:var(--cms-white);padding:44px 36px 40px;margin:0}
-.cm-svc .cms-pkg__name{font-size:32px;line-height:1.15;margin:12px 0 8px}
-.cm-svc .cms-pkg__tag{font-family:"Newsreader",serif;font-style:italic;font-size:18px;line-height:1.45;margin:0 0 26px}
-.cm-svc .cms-pkg__price{font-family:"Romie Regular",serif;font-size:30px;line-height:1;margin:0 0 8px}
-.cm-svc .cms-pkg__price span{font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;margin-right:6px}
-.cm-svc .cms-pkg__time{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.06em;margin:0 0 24px;opacity:.75}
-.cm-svc .cms-pkg__for{font-size:14px;line-height:1.65;margin:0 0 22px;padding:18px 0;border-top:1px solid var(--cms-line);border-bottom:1px solid var(--cms-line)}
-.cm-svc .cms-pkg__for strong{display:block;font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-.cm-svc .cms-pkg__list{list-style:none;margin:0 0 30px;padding:0;flex:1}
-.cm-svc .cms-pkg__list li{position:relative;font-size:14px;line-height:1.6;padding:7px 0 7px 22px}
+/* 3. packages — NHU-style rows; Residence/Vessel slide sideways */
+.cm-svc .cms-packages{background:var(--cms-cream);padding:120px 0 0;scroll-margin-top:80px}
+.cm-svc .cms-rows{margin-top:64px}
+.cm-svc .cms-row{display:grid;grid-template-columns:1fr 1fr;min-height:680px;background:var(--cms-cream);margin:0}
+.cm-svc .cms-row__media{position:relative;overflow:hidden;background:var(--cms-sand)}
+.cm-svc .cms-row__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale 1.4s cubic-bezier(.22,.61,.36,1)}
+.cm-svc .cms-row:hover .cms-row__media img{scale:1.03}
+.cm-svc .cms-row--flip .cms-row__media{order:2}
+.cm-svc .cms-row__body{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:80px clamp(40px,7vw,110px)}
+.cm-svc .cms-row__body>*{max-width:480px}
+.cm-svc .cms-pkg__name{font-size:40px;line-height:1.1;margin:14px 0 8px}
+.cm-svc .cms-pkg__tag{font-family:"Newsreader",serif;font-style:italic;font-size:18px;line-height:1.45;margin:0 0 22px}
+.cm-svc .cms-row__desc{font-size:15px;line-height:1.75;margin:0 0 28px}
+.cm-svc .cms-row__meta{display:flex;flex-wrap:wrap;gap:16px 44px;margin:0 0 30px;padding:0}
+.cm-svc .cms-row__meta div{margin:0}
+.cm-svc .cms-row__meta dt{font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;opacity:.75}
+.cm-svc .cms-row__meta dd{margin:0;font-family:"Romie Regular",serif;font-size:28px;line-height:1}
+.cm-svc .cms-row__incl{width:100%;border-top:1px solid var(--cms-line);border-bottom:1px solid var(--cms-line);margin:0 0 32px}
+.cm-svc .cms-row__incl summary{list-style:none;cursor:pointer;position:relative;padding:18px 36px 18px 0;font-family:"Inter",sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.cm-svc .cms-row__incl summary::-webkit-details-marker{display:none}
+.cm-svc .cms-row__incl summary::before,.cm-svc .cms-row__incl summary::after{content:"";position:absolute;right:4px;top:50%;width:13px;height:1px;background:currentColor;transition:rotate .3s}
+.cm-svc .cms-row__incl summary::after{rotate:90deg}
+.cm-svc .cms-row__incl[open] summary::after{rotate:0deg}
+.cm-svc .cms-pkg__list{list-style:none;margin:0 0 18px;padding:0}
+.cm-svc .cms-pkg__list li{position:relative;font-size:14px;line-height:1.6;padding:6px 0 6px 22px}
 .cm-svc .cms-pkg__list li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:1px;background:currentColor}
 .cm-svc .cms-pkg__list li.cms-pkg__plus{padding-left:0;font-weight:600}
 .cm-svc .cms-pkg__list li.cms-pkg__plus::before{display:none}
-.cm-svc .cms-pkg__note{background:var(--cms-cream);padding:18px 20px;margin:-8px 0 28px;font-size:13px;line-height:1.6}
-.cm-svc .cms-pkg__note p{margin:0 0 6px}
-.cm-svc .cms-pkg__note p:last-child{margin:0;font-style:italic;font-family:"Newsreader",serif;font-size:15px}
-.cm-svc .cms-pkg .cms-btn{align-self:flex-start}
-.cm-svc .cms-pkg--feature{background:var(--cms-brown);color:var(--cms-cream)}
-.cm-svc .cms-pkg--feature .cms-pkg__name,.cm-svc .cms-pkg--feature .cms-pkg__price{color:var(--cms-cream)}
-.cm-svc .cms-pkg--feature .cms-pkg__for{border-color:rgba(248,244,237,.2)}
-.cm-svc .cms-pkg__badge{position:absolute;top:0;right:36px;translate:0 -50%;margin:0;background:var(--cms-taupe);color:var(--cms-brown);font-family:"Inter",sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px}
+.cm-svc .cms-row__aside{font-family:"Newsreader",serif;font-style:italic;font-size:15px;margin:-4px 0 20px}
+.cm-svc .cms-pkg__badge{display:inline-block;margin:0 0 18px;background:var(--cms-taupe);color:var(--cms-brown);font-family:"Inter",sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px}
+.cm-svc .cms-row--feature .cms-row__body{background:var(--cms-brown);color:var(--cms-cream)}
+.cm-svc .cms-row--feature .cms-pkg__name{color:var(--cms-cream)}
+.cm-svc .cms-row--feature .cms-row__incl{border-color:rgba(248,244,237,.22)}
+.cm-svc .cms-row--alt .cms-row__body{background:var(--cms-sand)}
+.cm-svc .cms-row--alt .cms-row__incl{border-color:rgba(62,41,34,.2)}
 
-/* 4. vessel */
-.cm-svc .cms-vessel{background:var(--cms-sand);padding:110px 0}
-.cm-svc .cms-vessel__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
-.cm-svc .cms-vessel__media{max-width:460px;width:100%;overflow:hidden}
-.cm-svc .cms-vessel__media .cms-photo{aspect-ratio:4/5;scale:1.06}
-.cm-svc .cms-vessel__text .cms-pkg__name{font-size:32px;margin-top:0}
-.cm-svc .cms-vessel__meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
-.cm-svc .cms-vessel .cms-pkg__for{max-width:580px;border-color:rgba(62,41,34,.2)}
-.cm-svc .cms-pkg__list--cols{columns:2;column-gap:30px;max-width:600px;margin-bottom:22px}
-.cm-svc .cms-pkg__list--cols li{break-inside:avoid}
-.cm-svc .cms-pkg__list--cols li.cms-pkg__plus{column-span:all}
-.cm-svc .cms-vessel__upgrade{font-size:14px;line-height:1.65;margin:0 0 30px;max-width:560px;padding-left:16px;border-left:2px solid var(--cms-brown)}
+/* sideways slider (desktop) */
+.cm-svc .cms-slider{position:relative;overflow:hidden}
+.cm-svc .cms-slider__track{display:flex;width:200%;transition:transform .9s cubic-bezier(.65,0,.35,1)}
+.cm-svc .cms-slider__track>.cms-row{flex:0 0 50%;width:50%}
+.cm-svc .cms-slider.is-alt .cms-slider__track{transform:translateX(-50%)}
+.cm-svc .cms-slider__track>.cms-row:first-child .cms-row__body{padding-right:calc(clamp(40px,7vw,110px) + 64px)}
+.cm-svc .cms-slider__track>.cms-row:last-child .cms-row__body{padding-left:calc(clamp(40px,7vw,110px) + 64px)}
+.cm-svc .cms-slider__tab{position:absolute;top:0;bottom:0;z-index:2;width:64px;margin:0;padding:30px 0;border:0;border-radius:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;cursor:pointer;color:var(--cms-brown);font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;line-height:1;transition:opacity .5s ease,background-color .3s ease}
+.cm-svc .cms-slider__tab span:not(.cms-slider__arrow){writing-mode:vertical-rl;white-space:nowrap}
+.cm-svc .cms-slider__arrow{font-size:16px;letter-spacing:0}
+.cm-svc .cms-slider__tab--next{right:0;background:var(--cms-sand)}
+.cm-svc .cms-slider__tab--next:hover,.cm-svc .cms-slider__tab--next:focus-visible{background:#DCD1C2}
+.cm-svc .cms-slider__tab--next .cms-slider__arrow{animation:cms-nudge 2.2s ease-in-out infinite}
+.cm-svc .cms-slider__tab--prev{left:0;background:var(--cms-cream);opacity:0;pointer-events:none}
+.cm-svc .cms-slider.is-alt .cms-slider__tab--next{opacity:0;pointer-events:none}
+.cm-svc .cms-slider.is-alt .cms-slider__tab--prev{opacity:1;pointer-events:auto}
+.cm-svc .cms-slider__tab:focus-visible{outline:1px solid currentColor;outline-offset:-6px}
+@keyframes cms-nudge{0%,100%{translate:0 0}50%{translate:5px 0}}
+@media (prefers-reduced-motion:reduce){.cm-svc .cms-slider__track{transition:none}.cm-svc .cms-slider__tab--next .cms-slider__arrow{animation:none}.cm-svc .cms-row:hover .cms-row__media img{scale:1}}
 
 /* 5. unsure */
 .cm-svc .cms-unsure{background:var(--cms-cream);padding:110px 0}
@@ -283,12 +301,17 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 .cm-svc .cms-reveal.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.cm-svc .cms-reveal{opacity:1;transform:none;transition:none}.cm-svc .cms-photo{scale:1}}
 
-@media (min-width:1025px){.cm-svc .cms-pkgs .cms-pkg__tag{min-height:2.9em}}
-
 /* tablet */
 @media (max-width:1024px){
-  .cm-svc .cms-hero__grid,.cm-svc .cms-vessel__grid,.cm-svc .cms-faq__grid{gap:50px}
-  .cm-svc .cms-pkgs{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto;gap:40px}
+  .cm-svc .cms-row{grid-template-columns:1fr;min-height:0}
+  .cm-svc .cms-row__media{aspect-ratio:4/3}
+  .cm-svc .cms-row--flip .cms-row__media{order:0}
+  .cm-svc .cms-row__body,.cm-svc .cms-slider__track>.cms-row:first-child .cms-row__body,.cm-svc .cms-slider__track>.cms-row:last-child .cms-row__body{padding:64px 48px 72px}
+  .cm-svc .cms-row__body>*{max-width:620px}
+  .cm-svc .cms-slider__track{display:block;width:auto;transform:none !important}
+  .cm-svc .cms-slider__track>.cms-row{width:auto}
+  .cm-svc .cms-slider__tab{display:none}
+  .cm-svc .cms-hero__grid,.cm-svc .cms-faq__grid{gap:50px}
   .cm-svc .cms-quotes{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}
   .cm-svc .cms-steps{grid-template-columns:1fr 1fr;row-gap:20px}
   .cm-svc .cms-step:nth-child(3){border-left:0;padding-left:0}
@@ -299,19 +322,20 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 @media (max-width:767px){
   .cm-svc .cms-wrap{padding:0 20px}
   .cm-svc .cms-hero{padding:64px 0 80px}
-  .cm-svc .cms-hero__grid,.cm-svc .cms-vessel__grid,.cm-svc .cms-faq__grid{grid-template-columns:1fr}
+  .cm-svc .cms-hero__grid,.cm-svc .cms-faq__grid{grid-template-columns:1fr}
   .cm-svc .cms-hero__grid{gap:50px}
-  .cm-svc .cms-hero__media,.cm-svc .cms-vessel__media{justify-self:center;max-width:360px}
-  .cm-svc .cms-approach,.cm-svc .cms-process,.cm-svc .cms-words,.cm-svc .cms-faq,.cm-svc .cms-cta,.cm-svc .cms-vessel,.cm-svc .cms-unsure{padding:80px 0}
-  .cm-svc .cms-packages{padding:80px 0 60px}
+  .cm-svc .cms-hero__media{justify-self:center;max-width:360px}
+  .cm-svc .cms-approach,.cm-svc .cms-process,.cm-svc .cms-words,.cm-svc .cms-faq,.cm-svc .cms-cta,.cm-svc .cms-unsure{padding:80px 0}
+  .cm-svc .cms-packages{padding:80px 0 0}
+  .cm-svc .cms-rows{margin-top:44px}
+  .cm-svc .cms-row__body,.cm-svc .cms-slider__track>.cms-row:first-child .cms-row__body,.cm-svc .cms-slider__track>.cms-row:last-child .cms-row__body{padding:48px 20px 60px}
+  .cm-svc .cms-pkg__name{font-size:36px}
+  .cm-svc .cms-row__meta dd{font-size:26px}
+  .cm-svc .cms-row__body .cms-btn{align-self:stretch;width:100%}
   .cm-svc .cms-approach__head{margin-bottom:36px}
   .cm-svc .cms-pillars,.cm-svc .cms-steps{grid-template-columns:1fr}
   .cm-svc .cms-pillar,.cm-svc .cms-pillar:first-child,.cm-svc .cms-pillar:last-child,.cm-svc .cms-step,.cm-svc .cms-step:first-child,.cm-svc .cms-step:last-child,.cm-svc .cms-step:nth-child(2),.cm-svc .cms-step:nth-child(3){border-left:0;padding:26px 0 8px;border-bottom:1px solid var(--cms-line)}
   .cm-svc .cms-steps{row-gap:0}
-  .cm-svc .cms-pkg{padding:40px 24px 32px}
-  .cm-svc .cms-pkg__badge{right:24px}
-  .cm-svc .cms-pkg .cms-btn,.cm-svc .cms-vessel .cms-btn{align-self:stretch;width:100%}
-  .cm-svc .cms-pkg__list--cols{columns:1}
   .cm-svc .cms-quote{padding:34px 24px 28px}
   .cm-svc .cms-faq__grid{gap:20px}
   .cm-svc .cms-faq summary{font-size:15px;padding-right:36px}
@@ -447,103 +471,133 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 
 				<!-- ============ 3. PACKAGES ============ -->
 				<section class="cms-packages" id="packages">
-					<div class="cms-wrap">
-						<div class="cms-center cms-reveal">
-							<p class="cms-eyebrow">Packages</p>
-							<h2 class="cms-h2">Choose your starting point</h2>
-							<p class="cms-body">Prices are starting points. You&rsquo;ll receive a fixed quote after your Walkthrough Call, before any work begins.</p>
-						</div>
+					<div class="cms-wrap cms-center cms-reveal">
+						<p class="cms-eyebrow">Packages</p>
+						<h2 class="cms-h2">Choose your starting point</h2>
+						<p class="cms-body">Prices are starting points. You&rsquo;ll receive a fixed quote after your Walkthrough Call, before any work begins.</p>
+					</div>
 
-						<div class="cms-pkgs" data-stagger>
-							<!-- The Blueprint -->
-							<article class="cms-pkg cms-reveal" aria-labelledby="pkg-blueprint">
+					<div class="cms-rows">
+						<!-- The Blueprint -->
+						<article class="cms-row" aria-labelledby="pkg-blueprint">
+							<div class="cms-row__media">
+								<img src="../wp-content/uploads/2026/11/services/pkg-blueprint-900.webp" srcset="../wp-content/uploads/2026/11/services/pkg-blueprint-900.webp 900w, ../wp-content/uploads/2026/11/services/pkg-blueprint-1300.webp 1081w" sizes="(max-width: 1024px) 100vw, 50vw" width="900" height="1125" alt="Stationery and envelope from the Ihmani Home brand identity" loading="lazy" decoding="async">
+							</div>
+							<div class="cms-row__body cms-reveal">
 								<p class="cms-num">01 &middot; Brand foundation</p>
 								<h3 class="cms-pkg__name" id="pkg-blueprint">The Blueprint</h3>
 								<p class="cms-pkg__tag">The plan your brand is built on.</p>
-								<p class="cms-pkg__price"><span>From</span> $3,500</p>
-								<p class="cms-pkg__time">2&ndash;3 weeks</p>
-								<p class="cms-pkg__for"><strong>For you if</strong> you know exactly what you do, but your visuals haven&rsquo;t caught up yet.</p>
-								<ul class="cms-pkg__list">
-									<li>Brand questionnaire and a 60-minute strategy session</li>
-									<li>Positioning statement and brand voice notes</li>
-									<li>Visual direction and moodboard</li>
-									<li>Primary logo and submark</li>
-									<li>Colour palette and two typefaces</li>
-									<li>Mini brand guide</li>
-								</ul>
-								<a class="cms-btn cms-btn--outline" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
-							</article>
+								<p class="cms-row__desc">For founders who know exactly what they do, but whose visuals haven&rsquo;t caught up yet. A focused foundation &mdash; positioning, direction and a core identity &mdash; delivered in weeks, not months.</p>
+								<dl class="cms-row__meta">
+									<div><dt>Investment from</dt><dd>$3,500</dd></div>
+									<div><dt>Typical timeline</dt><dd>2&ndash;3 weeks</dd></div>
+								</dl>
+								<details class="cms-row__incl">
+									<summary>What&rsquo;s included</summary>
+									<ul class="cms-pkg__list">
+										<li>Brand questionnaire and a 60-minute strategy session</li>
+										<li>Positioning statement and brand voice notes</li>
+										<li>Visual direction and moodboard</li>
+										<li>Primary logo and submark</li>
+										<li>Colour palette and two typefaces</li>
+										<li>Mini brand guide</li>
+									</ul>
+								</details>
+								<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
+							</div>
+						</article>
 
-							<!-- The Framework -->
-							<article class="cms-pkg cms-pkg--feature cms-reveal" aria-labelledby="pkg-framework">
+						<!-- The Framework -->
+						<article class="cms-row cms-row--flip cms-row--feature" aria-labelledby="pkg-framework">
+							<div class="cms-row__media">
+								<img src="../wp-content/uploads/2026/11/services/pkg-framework-900.webp" srcset="../wp-content/uploads/2026/11/services/pkg-framework-900.webp 900w, ../wp-content/uploads/2026/11/services/pkg-framework-1300.webp 1081w" sizes="(max-width: 1024px) 100vw, 50vw" width="900" height="1125" alt="A full stationery suite with patterned envelopes and cards" loading="lazy" decoding="async">
+							</div>
+							<div class="cms-row__body cms-reveal">
 								<p class="cms-pkg__badge">Our signature</p>
 								<p class="cms-num">02 &middot; Full brand identity</p>
 								<h3 class="cms-pkg__name" id="pkg-framework">The Framework</h3>
 								<p class="cms-pkg__tag">The complete identity system, built on strategy.</p>
-								<p class="cms-pkg__price"><span>From</span> $6,500</p>
-								<p class="cms-pkg__time">4&ndash;6 weeks</p>
-								<p class="cms-pkg__for"><strong>For you if</strong> you&rsquo;re launching or repositioning, and want every touchpoint to feel considered.</p>
-								<ul class="cms-pkg__list">
-									<li class="cms-pkg__plus">Everything in The Blueprint, plus:</li>
-									<li>Strategy workshop with audience and competitor research</li>
-									<li>Positioning, messaging pillars and tagline direction</li>
-									<li>Full logo suite, extended palette and type hierarchy</li>
-									<li>Brand patterns and graphic elements</li>
-									<li>Launch assets: social templates, business card and email signature</li>
-									<li>Full brand guidelines</li>
-								</ul>
+								<p class="cms-row__desc">For founders launching or repositioning who want every touchpoint to feel considered. We go deep on research and positioning, then build an identity system you can grow into for years.</p>
+								<dl class="cms-row__meta">
+									<div><dt>Investment from</dt><dd>$6,500</dd></div>
+									<div><dt>Typical timeline</dt><dd>4&ndash;6 weeks</dd></div>
+								</dl>
+								<details class="cms-row__incl">
+									<summary>What&rsquo;s included</summary>
+									<ul class="cms-pkg__list">
+										<li class="cms-pkg__plus">Everything in The Blueprint, plus:</li>
+										<li>Strategy workshop with audience and competitor research</li>
+										<li>Positioning, messaging pillars and tagline direction</li>
+										<li>Full logo suite, extended palette and type hierarchy</li>
+										<li>Brand patterns and graphic elements</li>
+										<li>Launch assets: social templates, business card and email signature</li>
+										<li>Full brand guidelines</li>
+									</ul>
+								</details>
 								<a class="cms-btn cms-btn--light" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
-							</article>
-
-							<!-- The Residence -->
-							<article class="cms-pkg cms-reveal" aria-labelledby="pkg-residence">
-								<p class="cms-num">03 &middot; Brand + website</p>
-								<h3 class="cms-pkg__name" id="pkg-residence">The Residence</h3>
-								<p class="cms-pkg__tag">Your brand and its online home, designed as one.</p>
-								<p class="cms-pkg__price"><span>From</span> $10,500</p>
-								<p class="cms-pkg__time">8&ndash;10 weeks</p>
-								<p class="cms-pkg__for"><strong>For you if</strong> you want your identity and website done together, and done properly.</p>
-								<ul class="cms-pkg__list">
-									<li class="cms-pkg__plus">Everything in The Framework, plus:</li>
-									<li>Website strategy, sitemap and page structure</li>
-									<li>Custom desktop and mobile design</li>
-									<li>Build, foundational SEO and launch</li>
-									<li>30 days of post-launch support</li>
-								</ul>
-								<div class="cms-pkg__note">
-									<p><strong>Built on your terms.</strong> Shopify, WordPress or Squarespace if you&rsquo;d like to manage your own content &mdash; or a bespoke, custom-coded website, from $13,500.</p>
-									<p>Ask about our monthly care plan.</p>
-								</div>
-								<a class="cms-btn cms-btn--outline" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
-							</article>
-						</div>
-					</div>
-				</section>
-
-				<!-- ============ 4. THE VESSEL ============ -->
-				<section class="cms-vessel" aria-labelledby="pkg-vessel">
-					<div class="cms-wrap cms-vessel__grid">
-						<div class="cms-vessel__media cms-reveal">
-							<img class="cms-photo" data-drift src="../wp-content/uploads/2026/11/services/vessel-tube-900.webp" srcset="../wp-content/uploads/2026/11/services/vessel-tube-600.webp 600w, ../wp-content/uploads/2026/11/services/vessel-tube-900.webp 900w, ../wp-content/uploads/2026/11/services/vessel-tube-1300.webp 1300w" sizes="(max-width: 767px) 90vw, 460px" width="900" height="1260" alt="Skincare tube packaging designed by Creative Mayaa Studio" loading="lazy" decoding="async">
-						</div>
-						<div class="cms-vessel__text cms-reveal">
-							<p class="cms-eyebrow">04 &middot; For product brands</p>
-							<h3 class="cms-pkg__name" id="pkg-vessel">The Vessel</h3>
-							<p class="cms-pkg__tag">Packaging that feels as considered as what&rsquo;s inside.</p>
-							<div class="cms-vessel__meta">
-								<p class="cms-pkg__price"><span>From</span> $8,500</p>
-								<p class="cms-pkg__time">6&ndash;8 weeks</p>
 							</div>
-							<p class="cms-pkg__for"><strong>For you if</strong> you&rsquo;re a beauty, wellness or lifestyle founder bringing a product to market, and you want it to look the part on the shelf and in your customer&rsquo;s hands.</p>
-							<ul class="cms-pkg__list cms-pkg__list--cols">
-								<li class="cms-pkg__plus">Everything in The Framework, plus:</li>
-								<li>Packaging strategy and shelf review</li>
-								<li>Packaging design for up to 3 products</li>
-								<li>Print-ready files</li>
-								<li>Liaison with your printer</li>
-							</ul>
-							<p class="cms-vessel__upgrade"><strong>Selling online?</strong> Add a Shopify store designed around your new packaging, so you can sell from day one.</p>
-							<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
+						</article>
+
+						<!-- The Residence + The Vessel (slides sideways on hover) -->
+						<div class="cms-slider" data-slider>
+							<div class="cms-slider__track">
+								<article class="cms-row" id="pkg-residence-row" aria-labelledby="pkg-residence">
+									<div class="cms-row__media">
+										<img src="../wp-content/uploads/2026/11/services/pkg-residence-900.webp" srcset="../wp-content/uploads/2026/11/services/pkg-residence-900.webp 900w, ../wp-content/uploads/2026/11/services/pkg-residence-1300.webp 1300w" sizes="(max-width: 1024px) 100vw, 50vw" width="900" height="1260" alt="A custom website shown on a laptop" loading="lazy" decoding="async">
+									</div>
+									<div class="cms-row__body cms-reveal">
+										<p class="cms-num">03 &middot; Brand + website</p>
+										<h3 class="cms-pkg__name" id="pkg-residence">The Residence</h3>
+										<p class="cms-pkg__tag">Your brand and its online home, designed as one.</p>
+										<p class="cms-row__desc">For founders who want their identity and website done together, and done properly. Built on Shopify, WordPress or Squarespace &mdash; or as a bespoke, custom-coded website, from $13,500.</p>
+										<dl class="cms-row__meta">
+											<div><dt>Investment from</dt><dd>$10,500</dd></div>
+											<div><dt>Typical timeline</dt><dd>8&ndash;10 weeks</dd></div>
+										</dl>
+										<details class="cms-row__incl">
+											<summary>What&rsquo;s included</summary>
+											<ul class="cms-pkg__list">
+												<li class="cms-pkg__plus">Everything in The Framework, plus:</li>
+												<li>Website strategy, sitemap and page structure</li>
+												<li>Custom desktop and mobile design</li>
+												<li>Build, foundational SEO and launch</li>
+												<li>30 days of post-launch support</li>
+											</ul>
+											<p class="cms-row__aside">Ask about our monthly care plan.</p>
+										</details>
+										<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
+									</div>
+								</article>
+
+								<article class="cms-row cms-row--flip cms-row--alt" id="pkg-vessel-row" aria-labelledby="pkg-vessel">
+									<div class="cms-row__media">
+										<img src="../wp-content/uploads/2026/11/services/vessel-tube-900.webp" srcset="../wp-content/uploads/2026/11/services/vessel-tube-900.webp 900w, ../wp-content/uploads/2026/11/services/vessel-tube-1300.webp 1300w" sizes="(max-width: 1024px) 100vw, 50vw" width="900" height="1260" alt="Skincare tube packaging designed by Creative Mayaa Studio" loading="lazy" decoding="async">
+									</div>
+									<div class="cms-row__body">
+										<p class="cms-num">04 &middot; For product brands</p>
+										<h3 class="cms-pkg__name" id="pkg-vessel">The Vessel</h3>
+										<p class="cms-pkg__tag">Packaging that feels as considered as what&rsquo;s inside.</p>
+										<p class="cms-row__desc">For beauty, wellness and lifestyle founders bringing a product to market, who want it to look the part on the shelf and in their customer&rsquo;s hands. Selling online? Add a Shopify store designed around your new packaging.</p>
+										<dl class="cms-row__meta">
+											<div><dt>Investment from</dt><dd>$8,500</dd></div>
+											<div><dt>Typical timeline</dt><dd>6&ndash;8 weeks</dd></div>
+										</dl>
+										<details class="cms-row__incl">
+											<summary>What&rsquo;s included</summary>
+											<ul class="cms-pkg__list">
+												<li class="cms-pkg__plus">Everything in The Framework, plus:</li>
+												<li>Packaging strategy and shelf review</li>
+												<li>Packaging design for up to 3 products</li>
+												<li>Print-ready files</li>
+												<li>Liaison with your printer</li>
+											</ul>
+										</details>
+										<a class="cms-btn" href="https://calendly.com/creativemayaa/30min" target="_blank" rel="noopener">Book a walkthrough call <span aria-hidden="true">&rarr;</span></a>
+									</div>
+								</article>
+							</div>
+							<button type="button" class="cms-slider__tab cms-slider__tab--next" aria-controls="pkg-vessel-row" aria-expanded="false"><span>04 &middot; The Vessel &mdash; for product brands</span><span class="cms-slider__arrow" aria-hidden="true">&rarr;</span></button>
+							<button type="button" class="cms-slider__tab cms-slider__tab--prev" aria-controls="pkg-residence-row" tabindex="-1"><span class="cms-slider__arrow" aria-hidden="true">&larr;</span><span>03 &middot; The Residence</span></button>
 						</div>
 					</div>
 				</section>
@@ -1006,6 +1060,16 @@ if(ss){var sl=[].slice.call(ss.querySelectorAll('.cms-slide')),cur=0,hold=false;
   window.addEventListener('load',function(){sl.forEach(function(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src');}});
     if(reduce)return;setInterval(function(){if(hold||document.hidden)return;var n=(cur+1)%sl.length,tries=0;while(!(sl[n].complete&&sl[n].naturalWidth)&&tries<sl.length){n=(n+1)%sl.length;tries++;}
       if(n===cur)return;sl[cur].classList.remove('is-on');sl[n].classList.add('is-on');cur=n;},550);});}
+/* Residence -> Vessel sideways slide */
+var sd=document.querySelector('.cm-svc [data-slider]');
+if(sd){var nx=sd.querySelector('.cms-slider__tab--next'),pv=sd.querySelector('.cms-slider__tab--prev'),rw=sd.querySelectorAll('.cms-slider__track > .cms-row'),mq=window.matchMedia('(min-width: 1025px)');
+  var setS=function(alt){var on=mq.matches;if(!on)alt=false;sd.classList.toggle('is-alt',alt);nx.setAttribute('aria-expanded',alt?'true':'false');
+    rw[0].inert=on&&alt;rw[1].inert=on&&!alt;nx.tabIndex=alt?-1:0;pv.tabIndex=alt?0:-1;};
+  nx.addEventListener('mouseenter',function(){setS(true);});pv.addEventListener('mouseenter',function(){setS(false);});
+  nx.addEventListener('click',function(e){setS(true);if(e.detail===0)pv.focus({preventScroll:true});});
+  pv.addEventListener('click',function(e){setS(false);if(e.detail===0)nx.focus({preventScroll:true});});
+  sd.addEventListener('mouseleave',function(){setS(false);});
+  if(mq.addEventListener)mq.addEventListener('change',function(){setS(false);});setS(false);}
 var t=false;function on(){if(!t){t=true;requestAnimationFrame(function(){t=false;frame();});}}
 window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on);window.addEventListener('load',frame);frame();
 })();</script>
