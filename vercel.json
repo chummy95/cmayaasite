@@ -2,5 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": null,
   "outputDirectory": "creativemayaa-local/site",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/freebies", "destination": "/resources/", "permanent": true },
+    { "source": "/freebies/(.*)", "destination": "/resources/", "permanent": true },
+    { "source": "/:path*/index.html", "destination": "/:path*/", "permanent": true }
+  ]
 }
